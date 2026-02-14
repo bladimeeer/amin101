@@ -1,262 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You!!!</title>
-    <style>
-        /* Base styling */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #fff0f5, #ffe4e1);
-            color: #333;
-            position: relative;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You</title>
 
-        /* Screen container */
-        .screen {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 20px;
-            padding: 30px 25px;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            backdrop-filter: blur(5px);
-            max-width: 340px;
-            margin: 20px;
-            z-index: 1;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        /* Images */
-        .top-image, .second-image {
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin: 15px auto;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .top-image:hover, .second-image:hover {
-            transform: scale(1.05);
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fff5f8, #ffeef3);
+    color: #444;
+}
 
-        /* Headline */
-        h1 {
-            color: #f3a6c8;
-            font-size: 2rem;
-            margin: 10px 0;
-        }
+.screen {
+    background: rgba(255,255,255,0.85);
+    padding: 40px 30px;
+    border-radius: 24px;
+    text-align: center;
+    max-width: 420px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+    backdrop-filter: blur(8px);
+    animation: fadeIn 1.2s ease;
+}
 
-        /* Messages */
-        .message {
-            max-width: 260px;
-            margin: 10px auto 5px;
-            font-size: 1rem;
-            color: #555;
-        }
+.second-image {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
 
-        .subtext {
-            font-size: 0.9rem;
-            color: #777;
-        }
+h1 {
+    margin: 10px 0 20px;
+    color: #e88ab5;
+    font-weight: 600;
+}
 
-        /* Stylish footer */
-        .vlad-footer {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 10000;
-            pointer-events: none;
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        .footer-content {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 8px 15px;
-            border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(243, 166, 200, 0.2);
-            backdrop-filter: blur(5px);
-            animation: floatFooter 3s ease-in-out infinite;
-        }
-        
-        .heart-pulse {
-            color: #f3a6c8;
-            font-size: 14px;
-            animation: heartbeat 1.5s ease-in-out infinite;
-        }
-        
-        .footer-text {
-            color: #5b4b42;
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 0.3px;
-        }
-        
-        .name {
-            color: #f3a6c8;
-            font-weight: 600;
-        }
-        
-        @keyframes floatFooter {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-3px);
-            }
-        }
-        
-        @keyframes heartbeat {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.2);
-            }
-        }
-        
-        /* Mobile adjustments */
-        @media (max-width: 768px) {
-            .vlad-footer {
-                bottom: 15px;
-                right: 15px;
-            }
-            
-            .footer-content {
-                padding: 6px 12px;
-            }
-            
-            .footer-text {
-                font-size: 12px;
-            }
-            
-            .screen {
-                margin: 15px;
-                padding: 25px 20px;
-                max-width: 300px;
-            }
-        }
-        
-        /* Hide on very small screens */
-        @media (max-width: 480px) {
-            .vlad-footer {
-                bottom: 10px;
-                right: 50%;
-                transform: translateX(50%);
-                animation: none;
-            }
-            
-            .footer-content {
-                animation: none;
-            }
-        }
-        
-        /* Remove old footer */
-        footer {
-            display: none;
-        }
-    </style>
+.message {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: left;
+}
+
+.message p {
+    margin-bottom: 16px;
+}
+
+.signature {
+    margin-top: 20px;
+    font-weight: 600;
+    color: #e88ab5;
+}
+
+.subtext {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
 </head>
+
 <body>
 
-<!-- Audio with fixed autoplay -->
-<audio id="bg-audio" src="sugarcane_-_leonora_official_lyric_video.wav" loop></audio>
+<audio id="bg-audio" src="SUGARCANE - Leonora (Official Lyric Video).mp3" loop></audio>
 
 <div class="screen">
-    <img src="bearthanks.jpg" alt="Second Image" class="second-image">
-    <h1>Yay! 💗</h1>
-    <p class="message">
-        Hi, Gwen!
-<br><br>
-        Thank you for choosing yes. I just wanted to say this.
-<br><br>
-        I’m really glad I met you. You’re genuinely kind, and may something sa presence mo na ang gaan sa pakiramdam. It feels calm and different in a good way, and I appreciate that.
-<br><br>
-        We’re still at the beginning, and I respect that. I’m not here to rush or force anything. If something is meant to grow, it will grow the right way. Love waits, and I’m patient.
-<br><br>
-        I’m not here to rush anything. Gusto ko lang makilala ka pa, step by step. Kung may magiging story man tayo, I hope we let it grow naturally, steady and honest, walang pressure.
-<br><br>
-        I’m grateful na dito nagsimula, and I’m looking forward to where this could go.
-<br><br>
-        <b>Vlad💖</b>
-    </p>
-    <p class="subtext">Chat mo nakooo!</p>
-</div>
+    <img src="bearthanks.jpg" alt="Memory" class="second-image">
+    <h1>Yay 💗</h1>
 
-<!-- Stylish Vlad footer -->
-<div class="vlad-footer">
-    <div class="footer-content">
-        <span class="heart-pulse">❤</span>
-        <span class="footer-text">made by <span class="name">vlad</span></span>
+    <div class="message">
+        <p>Hi Gwen,</p>
+
+        <p>Thank you for choosing yes. I just wanted to say this.</p>
+
+        <p>I’m really glad I met you. You’re genuinely kind, and may something sa presence mo na ang gaan sa pakiramdam. It feels calm and different in a good way, and I appreciate that.</p>
+
+        <p>We’re still at the beginning, and I respect that. If something is meant to grow, hindi siya minamadali. Love waits. It builds the right way.</p>
+
+        <p>Gusto ko lang makilala ka pa, step by step. Kung may magiging story man tayo, I hope we let it grow naturally, steady and honest, walang pressure.</p>
+
+        <p>I’m grateful na dito nagsimula, and I’m looking forward to where this could go.</p>
+
+        <div class="signature">Vlad 💖</div>
     </div>
+
+    <div class="subtext">Chat mo nakooo</div>
 </div>
 
 <script>
-    // Audio control
-    const audio = document.getElementById('bg-audio');
-    audio.volume = 0.7;
+const audio = document.getElementById("bg-audio");
+audio.volume = 0.5;
 
-    // Attempt to autoplay
-    audio.play().catch(e => {
-        console.log("Autoplay blocked, waiting for user interaction");
-    });
-
-    // Ensure audio plays on first click/tap
-    function playAudio() {
-        audio.play().catch(e => console.log("Play failed:", e));
-        document.removeEventListener('click', playAudio);
-        document.removeEventListener('touchstart', playAudio);
-    }
-    document.addEventListener('click', playAudio);
-    document.addEventListener('touchstart', playAudio);
-
-    // Confetti effect
-    window.addEventListener('load', function() {
-        createConfetti();
-    });
-
-    function createConfetti() {
-        const confettiCount = 25;
-        const colors = ['#f3a6c8', '#ffb6c1', '#ffc0cb', '#ffd1dc', '#ffe4e9'];
-
-        for (let i = 0; i < confettiCount; i++) {
-            const confetti = document.createElement('div');
-            confetti.style.position = 'absolute';
-            confetti.style.width = '10px';
-            confetti.style.height = '10px';
-            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-            confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
-            confetti.style.left = Math.random() * 100 + 'vw';
-            confetti.style.top = '-20px';
-            confetti.style.opacity = '0.8';
-            confetti.style.zIndex = '9999';
-            confetti.style.pointerEvents = 'none';
-
-            document.body.appendChild(confetti);
-
-            // Animation
-            const animation = confetti.animate([
-                { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
-                { transform: `translateY(${window.innerHeight + 100}px) rotate(${Math.random() * 720}deg)`, opacity: 0 }
-            ], {
-                duration: Math.random() * 3000 + 2000,
-                easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
-            });
-
-            animation.onfinish = () => confetti.remove();
-        }
-    }
+document.addEventListener("click", function() {
+    audio.play().catch(() => {});
+}, { once: true });
 </script>
 
 </body>
